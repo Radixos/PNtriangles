@@ -12,12 +12,9 @@
 #include <Model.h>
 #include "Icso.h"
 
-
 #include<string>
 #include <iostream>
 #include <numeric>
-
-
 
 // settings
 const unsigned int SCR_WIDTH = 1200;
@@ -31,7 +28,6 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 unsigned int loadTexture(char const * path);
 void setVAO();
-
 
 // camera
 Camera camera(glm::vec3(0, 0, 9));
@@ -54,8 +50,6 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-
 
 	// glfw window creation
 	// --------------------
@@ -127,16 +121,10 @@ int main()
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-
-
-
-
-
 	// render loop
 	// -----------
 	while (!glfwWindowShouldClose(window))
 	{
-
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
@@ -265,18 +253,12 @@ unsigned int loadTexture(char const * path)
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		stbi_image_free(data);
 		std::cout << "Loaded texture at path: " << path << " width " << width << " id " << textureID << std::endl;
-
 	}
 	else
 	{
 		std::cout << "Texture failed to load at path: " << path << std::endl;
 		stbi_image_free(data);
-
 	}
 
 	return textureID;
 }
-
-
-
-

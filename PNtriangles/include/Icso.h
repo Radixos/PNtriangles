@@ -19,10 +19,7 @@ private:
 	glm::vec3 getNormal(vector<int> face);
 	void makePositions();
 
-	
 public:
 	Icso();
 	void getVertices(int* indices, int numInd,float* vertices, int numVerts);
-
-
 };

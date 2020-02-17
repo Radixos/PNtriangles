@@ -4,8 +4,6 @@ Icso::Icso() {
 	makePositions();
 }
 
-
-
 void Icso::makePositions() {
 	positions.push_back(glm::vec3(-X,0,Z));
 	positions.push_back(glm::vec3(X, 0, Z));
@@ -22,7 +20,6 @@ void Icso::makePositions() {
 	positions.push_back(glm::vec3(Z, -X, 0));
 	positions.push_back(glm::vec3(-Z, -X, 0));
 }
-
 
     // getVertices() : look through indices in triplets
 	// is thisVert in triplet?
@@ -72,9 +69,4 @@ glm::vec3 Icso::getNormal(vector<int> face) {
 	glm::vec3 a = glm::vec3(positions.at(face.at(1)) - positions.at(face.at(0)));
 	glm::vec3 b = glm::vec3(positions.at(face.at(2)) - positions.at(face.at(0)));
 	return glm::normalize(glm::cross(a, b));
-
 }
-
-
-
-

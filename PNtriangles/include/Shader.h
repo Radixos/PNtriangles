@@ -147,8 +147,6 @@ public:
 			glDeleteShader(tessControl);
 		if (tessEPath != nullptr)
 			glDeleteShader(tessEval);
-
-
 	}
 	// activate the shader
 	// ------------------------------------------------------------------------
