@@ -116,20 +116,34 @@ vec3 ProjectToPlane(vec3 Point, vec3 PlanePoint, vec3 PlaneNormal)
 
  float GetTessLevel(float Distance0, float Distance1)
  {
-    float AvgDistance = (Distance0 + Distance1) / 2.0;
-	 if (AvgDistance <= 2.0) {
-        return 100.0;
-    }else if (AvgDistance <= 3.0) {
-        return 10.0;
-    }
-	else if (AvgDistance <= 5.0) {
-        return 3.0;
-    }
-	else if (AvgDistance <= 6.0) {
-        return 2.0;
-    }
-    else{
-        return 1.0;
-    }
+	float tessLevel = 0;
+	float avgDist = (Distance0 + Distance1)/2;
+	float lambda = 0.105/2;
+	float alpha = 15;
+
+	float equation = -lambda * avgDist;
+
+	tessLevel = exp(equation) * alpha;
+
+	//if (avgDist < 1)
+	//	return 1;
+
+	return tessLevel;
+
+    //float AvgDistance = (Distance0 + Distance1) / 2.0;
+	// if (AvgDistance <= 2.0) {
+    //    return 100.0;
+    //}else if (AvgDistance <= 3.0) {
+    //    return 10.0;
+    //}
+	//else if (AvgDistance <= 5.0) {
+    //    return 3.0;
+    //}
+	//else if (AvgDistance <= 6.0) {
+    //    return 2.0;
+    //}
+    //else{
+    //    return 1.0;
+    //}
 }
 
