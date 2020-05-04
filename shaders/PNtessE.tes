@@ -27,8 +27,6 @@ in patch OutputPatch oPatch;
 out vec3 WorldPos_FS_in ;
 out vec3 Normals ;
 
-
-
 void main()
 {
     
